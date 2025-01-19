@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>tools</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Single-Page-Contact-Us-Form.css">
+</head>
+
+<body>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" style="background-color: rgb(241,247,252);width: 40%;">
+                    <form>
+                        <div class="form-group mb-3">
+                            <h1 class="text-center">Tool Name</h1>
+                        </div>
+                    </form>
+                    <div class="bg-light border rounded border-light jumbotron py-5 px-4" style="height: 90vh;">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Edition --&gt; Insertion</h4>
+                                <h6 class="text-muted card-subtitle mb-2">Insertion des images</h6>
+                                <form>
+                                    <p>Selectionner l'image à upload</p><input class="form-control" type="file" id="inputFileToLoad">
+                                    <p>Selectionner le chemin de destination pour l'upload</p><input class="form-control" type="text">
+                                    <p>Selectionner le nom pour l'upload</p><input class="form-control" type="text">
+                                    <div class="mt-4">
+                                        <div class="bg-light border rounded border-light jumbotron py-5 px-4" id="loading"><script type='text/javascript'>"use strict"
+function main()
+{
+    var inputFileToLoad = document.getElementById("inputFileToLoad");
+    var buttonLoadFile = document.createElement("button");
+    buttonLoadFile.onclick = loadImageFileAsURL;
+    buttonLoadFile.setAttribute("class", "btn btn-success mr-3");
+    buttonLoadFile.textContent = "Load Selected File";
+    var buttonUnLoadFile = document.createElement("button");
+    buttonUnLoadFile.onclick = unloadFileAsURL;
+    buttonUnLoadFile.setAttribute("class", "btn btn-success mr-3");
+    buttonUnLoadFile.textContent = "UnLoad Selected File";
+    document.getElementById("loading").appendChild(buttonLoadFile);
+    document.getElementById("loading").appendChild(buttonUnLoadFile);
+}
+var imageLoaded = null;
+function unloadFileAsURL()
+{
+        if(imageLoaded != null)
+                    {
+                        document.getElementById("loading").removeChild(imageLoaded);
+                        imageLoaded = null;
+                    }
+}
+function loadImageFileAsURL()
+{
+    var filesSelected = document.getElementById("inputFileToLoad").files;
+    if (filesSelected.length > 0)
+    {
+        var fileToLoad = filesSelected[0];
+
+        if (fileToLoad.type.match("image.*"))
+        {
+            var fileReader = new FileReader();
+            fileReader.onload = function(fileLoadedEvent) 
+            {
+                unloadFileAsURL();
+                imageLoaded = document.createElement("img");
+                imageLoaded.setAttribute("class", "img mt-5");
+                imageLoaded.style =
+                imageLoaded.src = fileLoadedEvent.target.result;
+                document.getElementById("loading").appendChild(imageLoaded);
+                    
+            };
+            fileReader.readAsDataURL(fileToLoad);
+        }
+    }
+}
+
+main();
+
+</script></div><button class="btn btn-success btn-lg" type="submit">Upload</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" style="padding-left: 20px;padding-right: 20px;background-color: rgb(241,247,252);height: 100vh;width: 60%;">
+                    <fieldset></fieldset>
+                    <legend><strong>Output</strong></legend>
+                    <p></p>
+                    <div class="bg-light border rounded border-light jumbotron py-5 px-4" style="height: 90vh;">
+                        <div class="card"></div><textarea style="width: 100%;height: 80vh;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

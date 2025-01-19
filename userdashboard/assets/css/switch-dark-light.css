@@ -1,0 +1,71 @@
+.icon_sun {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3e%3cpath fill='%23ffffff' fill-rule='evenodd' d='M548 818v126c0 8.837-7.163 16-16 16h-40c-8.837 0-16-7.163-16-16V818c15.845 1.643 27.845 2.464 36 2.464c8.155 0 20.155-.821 36-2.464m205.251-115.66l89.096 89.095c6.248 6.248 6.248 16.38 0 22.627l-28.285 28.285c-6.248 6.248-16.379 6.248-22.627 0L702.34 753.25c12.365-10.043 21.431-17.947 27.198-23.713c5.766-5.767 13.67-14.833 23.713-27.198m-482.502 0c10.043 12.365 17.947 21.431 23.713 27.198c5.767 5.766 14.833 13.67 27.198 23.713l-89.095 89.096c-6.248 6.248-16.38 6.248-22.627 0l-28.285-28.285c-6.248-6.248-6.248-16.379 0-22.627zM512 278c129.235 0 234 104.765 234 234S641.235 746 512 746S278 641.235 278 512s104.765-234 234-234M206 476c-1.643 15.845-2.464 27.845-2.464 36c0 8.155.821 20.155 2.464 36H80c-8.837 0-16-7.163-16-16v-40c0-8.837 7.163-16 16-16zm738 0c8.837 0 16 7.163 16 16v40c0 8.837-7.163 16-16 16H818c1.643-15.845 2.464-27.845 2.464-36c0-8.155-.821-20.155-2.464-36ZM814.062 180.653l28.285 28.285c6.248 6.248 6.248 16.379 0 22.627L753.25 320.66c-10.043-12.365-17.947-21.431-23.713-27.198c-5.767-5.766-14.833-13.67-27.198-23.713l89.095-89.096c6.248-6.248 16.38-6.248 22.627 0m-581.497 0l89.095 89.096c-12.365 10.043-21.431 17.947-27.198 23.713c-5.766 5.767-13.67 14.833-23.713 27.198l-89.096-89.095c-6.248-6.248-6.248-16.38 0-22.627l28.285-28.285c6.248-6.248 16.379-6.248 22.627 0M532 64c8.837 0 16 7.163 16 16v126c-15.845-1.643-27.845-2.464-36-2.464c-8.155 0-20.155.821-36 2.464V80c0-8.837 7.163-16 16-16z'/%3e%3c/svg%3e");
+}
+
+.icon_moon {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 56 56'%3e%3cpath fill='%23ffffff' d='M28 51.906c13.055 0 23.906-10.851 23.906-23.906c0-13.078-10.875-23.906-23.93-23.906C14.899 4.094 4.095 14.922 4.095 28c0 13.055 10.828 23.906 23.906 23.906m6.937-18.96c1.618 0 3.258-.352 4.243-.704c.257-.07.421-.094.562-.094c.375 0 .774.329.774.82c0 .094-.024.4-.141.704c-1.688 4.266-6.54 7.71-12.164 7.71c-7.711 0-13.594-5.507-13.594-13.218c0-5.508 3.258-10.758 8.11-12.68c.304-.117.585-.14.75-.14a.76.76 0 0 1 .773.75c0 .117-.023.304-.14.61c-.423 1.1-.821 3.187-.821 4.663c0 7.102 4.547 11.578 11.648 11.578'/%3e%3c/svg%3e");
+}
+
+.icon_size {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  background-size: cover;
+}
+
+.dark-light-switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.dark-light-switcher > .switcher > input {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.dark-light-switcher > .switcher > label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 50px;
+  height: 20px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  margin-top: -24px;
+  margin-bottom: 0px;
+}
+
+.dark-light-switcher > .switcher > label:after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 17px;
+  height: 16px;
+  background: #000000;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.dark-light-switcher > .switcher > input:checked + label {
+  background: #dadada;
+}
+
+.dark-light-switcher > .switcher > input:checked + label:after {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+.dark-light-switcher > .switcher > label:active:after {
+  width: 28px;
+}
+
+#top_wiget > div {
+  height: 1.8rem;
+}
+
