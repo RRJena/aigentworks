@@ -1,5 +1,4 @@
 name: Deploy All Files to S3
-
 on:
   push:
     branches:
