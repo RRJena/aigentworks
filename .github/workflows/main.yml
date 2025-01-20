@@ -30,7 +30,7 @@ jobs:
         if [[ "${{ github.ref_name }}" == "main" ]]; then
           echo "bucket_name=aitoolhubwebsite" >> $GITHUB_ENV
         elif [[ "${{ github.ref_name }}" == "staging" ]]; then
-          echo "bucket_name=aitoolhubwebsite-dev" >> $GITHUB_ENV
+          echo "bucket_name=appstechnology-dev/aigentworks" >> $GITHUB_ENV
         else
           echo "This workflow only supports the main and staging branches."
           exit 1
