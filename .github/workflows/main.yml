@@ -3,7 +3,8 @@ name: Deploy All Files to S3
 on:
   push:
     branches:
-      - main  # Trigger workflow when changes are pushed to the main branch
+      - main    # Trigger workflow when changes are pushed to the main branch
+      - staging # Trigger workflow when changes are pushed to the staging branch
 
 jobs:
   deploy:
@@ -22,7 +23,20 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1  # Replace with your AWS region
 
-    # Step 3: Sync All Files to S3
+    # Step 3: Determine S3 Bucket Based on Branch
+    - name: Set Target S3 Bucket
+      id: set_bucket
+      run: |
+        if [[ "${{ github.ref_name }}" == "main" ]]; then
+          echo "bucket_name=aitoolhubwebsite" >> $GITHUB_ENV
+        elif [[ "${{ github.ref_name }}" == "staging" ]]; then
+          echo "bucket_name=appstechnology-dev/aigentworks" >> $GITHUB_ENV
+        else
+          echo "This workflow only supports the main and staging branches."
+          exit 1
+        fi
+
+    # Step 4: Sync All Files to the Target S3 Bucket
     - name: Deploy to S3
       run: |
-        aws s3 sync . s3://aitoolhubwebsite --delete
+        aws s3 sync . s3://$bucket_name --delete
